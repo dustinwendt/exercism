@@ -10,14 +10,14 @@ data Planet = Mercury
             | Neptune
 
 ageOn :: Planet -> Float -> Float
-ageOn planet seconds = seconds / earthYear planet
-                   where earthYear p = case p of
-                                    Mercury -> e * 0.2408476
-                                    Venus   -> e * 0.61519726
-                                    Earth   -> e
-                                    Mars    -> e * 1.8808158
-                                    Jupiter -> e * 11.862615
-                                    Saturn  -> e * 29.447498
-                                    Uranus  -> e * 84.016846
-                                    Neptune -> e * 164.79132
-                                    where e = 31557600
+ageOn planet seconds = seconds / (31557600 * earthYear planet)
+                       where earthYear p =
+                               case p of
+                                 Mercury -> 0.2408476
+                                 Venus   -> 0.61519726
+                                 Earth   -> 1
+                                 Mars    -> 1.8808158
+                                 Jupiter -> 11.862615
+                                 Saturn  -> 29.447498
+                                 Uranus  -> 84.016846
+                                 Neptune -> 164.79132
