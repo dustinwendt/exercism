@@ -1,1 +1,4 @@
+.cache/
+.exercism/
 .stack-work/
+*.pyc
